@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+@media (max-width: 600px) {
+    #task-title {
+        border-radius: 15px;
+        font-size: medium;
+    }
+    #task-status {
+        padding: 5px;
+        font-size: small;
+        width: 60px;
+    }
+    #toggle-done, #remove-task {
+        width: 50px;
+        height: 30px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 600px) {
+    #task-title {
+        border-radius: 25px;
+        font-size: larger;
+    }
+    #task-status {
+        padding: 20px;
+        font-size: medium;
+        width: 100px;
+    }
+    #toggle-done, #remove-task {
+        width: 75px;
+        height: 50px;
+        font-size: large;
+    }
+}
+
+body {
+    background-color: brown;
+    border-radius: 8px;
+}
+
+#task-time {
+    color: antiquewhite;
+    font-size: 2em;
+    margin: 10px;
+}
+
+#task-title {
+    display: block;
+    font-weight: bold;
+    background-color: rgb(226, 220, 220);
+    color: rgb(75, 16, 16);
+    width: 60vw;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#task-status {
+    font-weight: bolder;
+    color: antiquewhite;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+#task-status > .completed-task {
+    background-color: green;
+}
+
+#task-status > .incomplete-task {
+    background-color: red;
+}
+
+.completed-task, .incomplete-task {
+    border-radius: 5px;
+}
+
+#toggle-done {
+    background-color: yellow;
+}
+
+#remove-task {
+    background-color: blueviolet;
+}
+
+#remove-task:hover {
+    background-color: rgb(107, 24, 184);
+    cursor: pointer;
+}
+
+#container10 {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+#toggle-done, #remove-task {
+    display: inline-block;
+    border-radius: 8px;
+    position: relative;
+    color: black;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#toggle-done:hover{
+    cursor: pointer;
+    background-color: rgb(209, 209, 12);
+}

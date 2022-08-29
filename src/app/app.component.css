@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+@media (max-width: 600px) {
+    #Title {
+        width: 55vw;
+    }
+
+    #task-list {
+        padding-inline-start: 10px;
+        padding-inline-end: 10px;
+    }
+}
+
+@media (min-width: 600px) {
+    #Title {
+        width: 33vw;
+    }
+    #task-list {
+        padding-inline-start: 50px;
+        padding-inline-end: 50px;
+    }
+}
+
+#add-task {
+    text-align: center;
+}
+
+#add-task h3 {
+    color: brown;
+}
+
+#add-task input, #add-task button {
+    margin: 10px;
+}
+
+#Title {
+    color: antiquewhite;
+    background-color: brown;
+    display: block;
+    font-size: larger;
+    margin: auto;
+    border-radius: 15px;
+
+}
+
+#Title h2 {
+    padding: 10px;
+    text-align: center;
+}
+
+#task-list {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+footer {
+    height: 15px;
+}

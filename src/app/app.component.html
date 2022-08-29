@@ -1,0 +1,22 @@
+<body>
+  <div id="Title"><h2>TO-DO LIST</h2></div>
+
+  <div id="add-task">
+    <h3>Add a task!</h3>
+    <input #taskTitle type="text" placeholder="Task Description"><br>
+    <input #taskTime type="text" placeholder="Time to do the task"><br> 
+    <button id="add-task" (click)="addTask(taskTitle, taskTime)">Add task</button>
+  </div>
+
+  <ul id="task-list">
+    <li *ngFor="let task of tasks">
+      <app-task 
+      [task]="task" 
+      (taskRemover)=removeTask($event)
+      (taskMarker)=markTask($event)>
+      </app-task>
+    </li>
+  </ul>
+
+  <footer></footer>
+</body>

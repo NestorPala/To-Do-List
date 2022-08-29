@@ -1,0 +1,32 @@
+<body>
+    <h3 id="task-time">{{task.time}}</h3>
+
+    <div id="task-title">{{task.title.toUpperCase()}}</div>
+
+
+    <div id="container10">
+        <div id="container11">
+            <div id="task-status">
+                <div *ngIf="task.done === true; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                        <div class="completed-task">   DONE   </div>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                        <div class="incomplete-task">NOT DONE</div>
+                    </ng-template>
+            </div>
+        </div>
+
+        <div id="container12">
+            <div id="remove-task" (click)="removeTask()">Remove this task</div>  
+
+            <div *ngIf="task.done === true; then thenBlock2 else elseBlock2"></div>
+            <ng-template #thenBlock2>
+                <div id="toggle-done" (click)="toggleDoneFire()">Mark as undone</div>
+            </ng-template>
+            <ng-template #elseBlock2>
+                <div id="toggle-done" (click)="toggleDoneFire()">Mark as done</div>
+            </ng-template>
+        </div>
+    </div>
+</body>
