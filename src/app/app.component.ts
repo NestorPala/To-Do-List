@@ -8,10 +8,12 @@ import { Task } from './task/Task'
 })
 
 export class AppComponent {
-  title = 'todolist';
+  title = 'To-Do List';
 
   // save the tasks locally on the computer
   myStorage = window.localStorage;
+
+  emptyListText = document.createElement("p");
 
   tasks: Task[] = [
     // {
@@ -21,18 +23,34 @@ export class AppComponent {
     // },
   ];
 
+
+  checkEmptyList() {
+    if (this.tasks.length != 0) {
+      document.getElementById("empty-list-text")!.removeChild(this.emptyListText);
+      return;
+    }
+    this.emptyListText.innerHTML = "You haven't added any tasks yet";
+    this.emptyListText.setAttribute("style", "font-family: 'Fira Sans', sans-serif;text-align: center;margin: 50px;font-weight: bold;color: darkgrey;");
+    document.getElementById("empty-list-text")!.appendChild(this.emptyListText);
+  }
+
+
   ngOnInit() {
     let tasks = this.myStorage.getItem("tasks");
     this.tasks = JSON.parse(tasks !== null ? tasks : "[]");
+    this.checkEmptyList();
   }
+
 
   saveChanges() {
     localStorage.setItem("tasks", JSON.stringify(this.tasks));
+    this.checkEmptyList();
   }
+
 
   addTask(taskTitle: HTMLInputElement, taskTime: HTMLInputElement) {
     if (taskTitle.value === "" || taskTime.value === "") {
-      alert("Please add the information before adding a task");
+      alert("Please add some information before adding a task");
       return;
     }
 
@@ -50,11 +68,12 @@ export class AppComponent {
     };
 
     this.tasks.push(newTask);
-    this.saveChanges();
-
     taskTitle.value = "";
     taskTime.value = "";
+    alert("The task has been added successfully!");
+    this.saveChanges();
   }
+
 
   markTask(markedTask: {task: Task, done: boolean}) {
     for(let i=0; i<this.tasks.length; i++) {
@@ -65,13 +84,17 @@ export class AppComponent {
     this.saveChanges();
   }
 
+
   removeTask(taskToRemove: Task) {
+    if (!confirm("Are you sure you want to remove this task from the list?")) {
+      return;
+    }
     for(let i=0; i<this.tasks.length; i++) {
       if (this.tasks[i] === taskToRemove) {
         this.tasks.splice(i, 1);
       }
     }
     this.saveChanges();
-    alert("Task removed successfully!");
+    alert("The task has been removed successfully!");
   }
 }

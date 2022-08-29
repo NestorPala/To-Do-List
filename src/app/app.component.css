@@ -58,5 +58,14 @@
 }
 
 footer {
+    margin: 25px;
     height: 15px;
+    font-weight: bold;
+    color: darkgray;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: brown;
 }
