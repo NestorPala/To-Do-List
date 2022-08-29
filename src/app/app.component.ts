@@ -94,8 +94,8 @@ export class AppComponent {
         this.tasks.splice(i, 1);
       }
     }
-    this.saveChanges();
     alert("The task has been removed successfully!");
+    this.saveChanges();
   }
 
 
@@ -129,6 +129,28 @@ export class AppComponent {
         break;
       }
     }
+    this.saveChanges();
+  }
+
+
+  changeTaskTitle(taskTitleChanger: {task: Task, title: string}) {
+    for(let i=0; i<this.tasks.length; i++) {
+      if (this.tasks[i] === taskTitleChanger.task) {
+        this.tasks[i].title = taskTitleChanger.title;
+      }
+    }
+    alert("Task name has been changed successfully!");
+    this.saveChanges();
+  }
+
+
+  changeTaskTime(taskTimeChanger: {task: Task, time: string}) {
+    for(let i=0; i<this.tasks.length; i++) {
+      if (this.tasks[i] === taskTimeChanger.task) {
+        this.tasks[i].time = taskTimeChanger.time;
+      }
+    }
+    alert("Task time has been changed successfully!");
     this.saveChanges();
   }
 }

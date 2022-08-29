@@ -41,6 +41,7 @@
 body {
     background-color: brown;
     border-radius: 8px;
+    box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.2)
 }
 
 #task-time {
@@ -60,6 +61,15 @@ body {
     padding-bottom: 20px;
     text-align: center;
     margin-bottom: 5px;
+}
+
+#task-title:hover {
+    cursor: pointer;
+    background-color: darkgray;
+}
+
+#task-title:active {
+    background-color: rgb(146, 143, 143);
 }
 
 #task-status {
@@ -86,12 +96,43 @@ body {
     background-color: yellow;
 }
 
+#toggle-done:hover {
+    cursor: pointer;
+    background-color: rgb(209, 209, 12);
+}
+
+#toggle-done:active {
+    background-color: rgb(187, 187, 9);
+}
+
 #remove-task {
     background-color: blueviolet;
 }
 
+#remove-task:hover {
+    background-color: rgb(107, 24, 184);
+    cursor: pointer;
+}
+
+#remove-task:active {
+    background-color: rgb(95, 19, 167);
+}
+
 #move-task-up, #move-task-down {
     background-color: darkgray;
+}
+
+#move-task-up, #move-task-down {
+    color: rgb(75, 16, 16);
+}
+
+#move-task-up:hover, #move-task-down:hover {
+    background-color: rgb(146, 142, 142);
+    cursor: pointer;
+}
+
+#move-task-up:active, #move-task-down:active {
+    background-color: rgb(126, 122, 122);
 }
 
 #container10 {
@@ -110,21 +151,11 @@ body {
     font-weight: bold;
 }
 
-#move-task-up, #move-task-down {
-    color: rgb(75, 16, 16);
+#task-time:hover {
+    cursor: pointer;
+    color: rgb(218, 201, 179);
 }
 
-#move-task-up:hover, #move-task-down:hover {
-    background-color: rgb(146, 142, 142);
-    cursor: pointer;
-}
-
-#remove-task:hover {
-    background-color: rgb(107, 24, 184);
-    cursor: pointer;
-}
-
-#toggle-done:hover{
-    cursor: pointer;
-    background-color: rgb(209, 209, 12);
+#task-time:active {
+    color: rgb(196, 177, 154);
 }

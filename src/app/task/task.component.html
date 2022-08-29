@@ -1,7 +1,7 @@
 <body>
-    <h3 id="task-time">{{task.time}}</h3>
+    <h3 id="task-time" (click)="editTaskTime()">{{task.time}}</h3>
 
-    <div id="task-title">{{task.title.toUpperCase()}}</div>
+    <div id="task-title" (click)="editTaskTitle()">{{task.title.toUpperCase()}}</div>
 
 
     <div id="container10">
