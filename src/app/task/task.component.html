@@ -18,6 +18,11 @@
         </div>
 
         <div id="container12">
+            <div id="move-task-up" (click)="moveTaskUp()">Up</div>
+            <div id="move-task-down" (click)="moveTaskDown()">Down</div>
+        </div>
+
+        <div id="container13" style="margin-right: 20px;">
             <div id="remove-task" (click)="removeTask()">Remove this task</div>  
 
             <div *ngIf="task.done === true; then thenBlock2 else elseBlock2"></div>

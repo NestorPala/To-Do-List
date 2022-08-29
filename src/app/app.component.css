@@ -25,6 +25,11 @@
     }
 }
 
+input[type="text"]::placeholder {      
+    /* Firefox, Chrome, Opera */
+    text-align: center;
+}
+
 #add-task {
     text-align: center;
 }

@@ -97,4 +97,38 @@ export class AppComponent {
     this.saveChanges();
     alert("The task has been removed successfully!");
   }
+
+
+  moveTaskUp(task: Task) {
+    for(let i=0; i<this.tasks.length; i++) {
+      if (this.tasks[i] === task) {
+        if (i == 0) {
+          alert("The task is already at the top of the list.");
+          return;
+        }
+        let aux = this.tasks[i-1];
+        this.tasks[i-1] = this.tasks[i];
+        this.tasks[i] = aux;
+        break;
+      }
+    }
+    this.saveChanges();
+  }
+
+
+  moveTaskDown(task: Task) {
+    for(let i=0; i<this.tasks.length; i++) {
+      if (this.tasks[i] === task) {
+        if (i == this.tasks.length-1) {
+          alert("The task is already at the bottom of the list.");
+          return;
+        }
+        let aux = this.tasks[i+1];
+        this.tasks[i+1] = this.tasks[i];
+        this.tasks[i] = aux;
+        break;
+      }
+    }
+    this.saveChanges();
+  }
 }

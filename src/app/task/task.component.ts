@@ -17,6 +17,8 @@ export class TaskComponent implements OnInit {
 
   @Output() taskRemover = new EventEmitter<Task>();
   @Output() taskMarker = new EventEmitter<{task: Task, done: boolean}>();
+  @Output() taskUpMover = new EventEmitter<Task>();
+  @Output() taskDownMover = new EventEmitter<Task>();
 
   constructor() { 
   }
@@ -31,5 +33,13 @@ export class TaskComponent implements OnInit {
 
   removeTask() {
     this.taskRemover.emit(this.task);
+  }
+
+  moveTaskUp() {
+    this.taskUpMover.emit(this.task);
+  }
+
+  moveTaskDown() {
+    this.taskDownMover.emit(this.task);
   }
 }
