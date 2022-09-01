@@ -10,13 +10,13 @@
                 <div *ngIf="task.done === true; then thenBlock else elseBlock"></div>
                     <ng-template #thenBlock>
                         <div class="completed-task">
-                            <img class="status-icon" src="../../assets/images/check-square.svg">   
+                            <img class="status-icon" src="assets/images/check-square.svg">   
                             DONE   
                         </div>
                     </ng-template>
                     <ng-template #elseBlock>
                         <div class="incomplete-task">
-                            <img class="status-icon" src="../../assets/images/x-square.svg">
+                            <img class="status-icon" src="assets/images/x-square.svg">
                             NOT DONE
                         </div>
                     </ng-template>
@@ -25,10 +25,10 @@
 
         <div id="container12">
             <div id="move-task-up" title="Move task up" (click)="moveTaskUp()">
-                <img class="button-icon" src="../../assets/images/arrow-up.svg">
+                <img class="button-icon" src="assets/images/arrow-up.svg">
             </div>
             <div id="move-task-down" title="Move task down" (click)="moveTaskDown()">
-                <img class="button-icon" src="../../assets/images/arrow-down.svg">
+                <img class="button-icon" src="assets/images/arrow-down.svg">
             </div>
         </div>
 
@@ -36,17 +36,17 @@
             <div *ngIf="task.done === true; then thenBlock2 else elseBlock2"></div>
                 <ng-template #thenBlock2>
                     <div id="toggle-done" title="Mask task as undone" (click)="toggleDoneFire()">
-                        <img class="button-icon" src="../../assets/images/x-square.svg">
+                        <img class="button-icon" src="assets/images/x-square.svg">
                     </div>
                 </ng-template>
                 <ng-template #elseBlock2>
                     <div id="toggle-done" title="Mark task as done" (click)="toggleDoneFire()">
-                        <img class="button-icon" src="../../assets/images/check-square.svg">
+                        <img class="button-icon" src="assets/images/check-square.svg">
                     </div>
                 </ng-template>
             
             <div id="remove-task" title="Remove task" (click)="removeTask()">
-                <img class="button-icon" src="../../assets/images/trash.svg">
+                <img class="button-icon" src="assets/images/trash.svg">
             </div> 
         </div>
     </div>
