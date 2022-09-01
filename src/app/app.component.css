@@ -34,8 +34,19 @@ input[type="text"]::placeholder {
     text-align: center;
 }
 
-#add-task h3 {
+#add-task-button {
+    width: 75px;
+    height: 40px;
+    border-color: brown;
     color: brown;
+    font-weight: bold;
+    border-style: solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-task-button:hover {
+    background-color: darkgray;
 }
 
 #add-task input, #add-task button {
