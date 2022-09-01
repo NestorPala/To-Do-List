@@ -11,21 +11,20 @@
     }
     #task-status {
         padding: 5px;
-        font-size: small;
-        width: 90px;
+        width: 70px;
+        font-size: 0.6em;
     }
     #toggle-done, #remove-task, #move-task-up, #move-task-down {
-        width: 50px;
-        height: 30px;
+        width: 30px;
+        height: 20px;
         font-size: 10px;
         margin-left: 2px;
         margin-right: 2px;
         margin-bottom: 2px;
     }
     .button-icon {
-        width: 20px;
-        height: 20px;
-        margin-top: 2px;
+        width: 15px;
+        height: 15px;
     }
 }
 

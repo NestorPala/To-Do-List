@@ -29,6 +29,19 @@ input[type="text"]::placeholder {
     /* Firefox, Chrome, Opera */
     text-align: center;
     font-size: medium;
+    color: rgba(165, 42, 42, 0.548);
+    font-style: italic;
+    font-weight: 600;
+    
+}
+
+input[type="text"]:focus::placeholder {
+    color: antiquewhite;
+}
+
+h3 {
+    color: antiquewhite;
+    font-weight: normal;
 }
 
 #add-task {
@@ -36,14 +49,15 @@ input[type="text"]::placeholder {
 }
 
 #add-task-button {
-    width: 75px;
-    height: 40px;
+    width: 100px;
+    height: 50px;
     border-color: brown;
     color: brown;
     font-weight: bold;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 1.2em;
 }
 
 #add-task-button:hover {
@@ -77,12 +91,13 @@ input[type="text"]::placeholder {
 footer {
     margin: 25px;
     height: 15px;
-    font-weight: bold;
+    font-weight: normal;
     color: darkgray;
     text-align: center;
 }
 
 footer a {
     text-decoration: none;
-    color: brown;
+    color: antiquewhite;
+    font-weight: bold;
 }
