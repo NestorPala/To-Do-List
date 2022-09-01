@@ -22,11 +22,9 @@ export class TaskComponent implements OnInit {
   @Output() taskNameChanger = new EventEmitter<{task: Task, title: string}>();
   @Output() taskTimeChanger = new EventEmitter<{task: Task, time: string}>();
 
-  constructor() { 
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   toggleDoneFire() {
     let isTaskDone = !this.task.done;

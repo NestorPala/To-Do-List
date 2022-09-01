@@ -28,6 +28,7 @@
 input[type="text"]::placeholder {      
     /* Firefox, Chrome, Opera */
     text-align: center;
+    font-size: medium;
 }
 
 #add-task {
@@ -46,7 +47,7 @@ input[type="text"]::placeholder {
 }
 
 #add-task-button:hover {
-    background-color: darkgray;
+    background-color: rgb(206, 200, 200);
 }
 
 #add-task input, #add-task button {
