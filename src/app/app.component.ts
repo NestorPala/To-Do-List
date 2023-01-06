@@ -97,6 +97,13 @@ export class AppComponent {
     alert("The task has been removed successfully!");
     this.saveChanges();
   }
+  
+
+  private swap(arr: any[], a: number, b: number) {
+    const aux = arr[a];
+    arr[a] = arr[b];
+    arr[b] = aux;
+  }
 
 
   moveTaskUp(task: Task) {
@@ -106,9 +113,7 @@ export class AppComponent {
           alert("The task is already at the top of the list.");
           return;
         }
-        let aux = this.tasks[i-1];
-        this.tasks[i-1] = this.tasks[i];
-        this.tasks[i] = aux;
+        this.swap(this.tasks, i-1, i);
         break;
       }
     }
@@ -123,9 +128,7 @@ export class AppComponent {
           alert("The task is already at the bottom of the list.");
           return;
         }
-        let aux = this.tasks[i+1];
-        this.tasks[i+1] = this.tasks[i];
-        this.tasks[i] = aux;
+        this.swap(this.tasks, i+1, i);
         break;
       }
     }
