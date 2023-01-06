@@ -22,11 +22,18 @@ export class AppComponent {
   ];
 
 
+  private isTaskListNotEmpty() {
+    return this.tasks.length > 0;
+  }
+
+
   checkEmptyList() {
     const emptyListText = document.getElementById("empty-list-text")!;
     const newText = document.createElement("p");
-    if (this.tasks.length != 0) {
-      emptyListText.removeChild(emptyListText.childNodes[0]);
+    if (this.isTaskListNotEmpty()) {
+      if (emptyListText.childNodes.length > 0) {
+        emptyListText.removeChild(emptyListText.childNodes[0]);
+      }
       return;
     }
     newText.innerHTML = "You haven't added any tasks yet";
@@ -97,7 +104,7 @@ export class AppComponent {
     alert("The task has been removed successfully!");
     this.saveChanges();
   }
-  
+
 
   private swap(arr: any[], a: number, b: number) {
     const aux = arr[a];
