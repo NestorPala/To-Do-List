@@ -101,3 +101,11 @@ footer a {
     color: antiquewhite;
     font-weight: bold;
 }
+
+#empty-list-text {
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    margin: 50px;
+    font-weight: bold;
+    color: darkgrey;
+}

@@ -13,8 +13,6 @@ export class AppComponent {
   // save the tasks locally on the computer
   myStorage = window.localStorage;
 
-  emptyListText = document.createElement("p");
-
   tasks: Task[] = [
     // {
     //   "title":"study maths",
@@ -25,13 +23,14 @@ export class AppComponent {
 
 
   checkEmptyList() {
+    const emptyListText = document.getElementById("empty-list-text")!;
+    const newText = document.createElement("p");
     if (this.tasks.length != 0) {
-      document.getElementById("empty-list-text")!.removeChild(this.emptyListText);
+      emptyListText.removeChild(emptyListText.childNodes[0]);
       return;
     }
-    this.emptyListText.innerHTML = "You haven't added any tasks yet";
-    this.emptyListText.setAttribute("style", "font-family: 'Fira Sans', sans-serif;text-align: center;margin: 50px;font-weight: bold;color: darkgrey;");
-    document.getElementById("empty-list-text")!.appendChild(this.emptyListText);
+    newText.innerHTML = "You haven't added any tasks yet";
+    emptyListText.appendChild(newText);
   }
 
 
