@@ -1,33 +1,44 @@
 <body>
-  <div id="Title"><h2>TO-DO LIST</h2></div>
+    <main>
+        <div id="Title-container">
+            <h2 id="Title">TO-DO LIST</h2>
+        </div>
+        <br><br>
+        <div id="add-task">
+            <h3>Enter a new task to your list:</h3>
+            <input #taskTime type="text" placeholder="18:30"><br>
+            <input #taskTitle type="text" placeholder="'Go to the gym'"><br><br><br>
+            <button id="add-task-button" (click)="addTask(taskTitle, taskTime)">
+                Add new task
+            </button>
+        </div>
+        <br><br>
 
-  <div id="add-task">
-    <h3>Add a task!</h3>
-    <input #taskTime type="text" placeholder="18:30"><br> 
-    <input #taskTitle type="text" placeholder="Go to the gym"><br>
-    <button id="add-task-button" (click)="addTask(taskTitle, taskTime)">Add</button>
-  </div>
+        <ul id="task-list">    
+            <li *ngFor="let task of tasks">
+                <div class="task-container">
+                    <app-task 
+                    [task]="task" 
+                    (taskRemover)=removeTask($event) 
+                    (taskMarker)=markTask($event)
+                    (taskUpMover)=moveTaskUp($event) 
+                    (taskDownMover)=moveTaskDown($event)
+                    (taskNameChanger)=changeTaskTitle($event) 
+                    (taskTimeChanger)=changeTaskTime($event)>
+                    </app-task>
+                </div>
+            </li>
+        </ul>
+        <br><br><br><br>
 
-  <ul id="task-list">
-    <li *ngFor="let task of tasks">
-      <app-task 
-      [task]="task" 
-      (taskRemover)=removeTask($event)
-      (taskMarker)=markTask($event)
-      (taskUpMover)=moveTaskUp($event)
-      (taskDownMover)=moveTaskDown($event)
-      (taskNameChanger)=changeTaskTitle($event)
-      (taskTimeChanger)=changeTaskTime($event)
-      >
-      </app-task>
-    </li>
-  </ul>
+        <div id="empty-list-text"></div>
+    </main>
 
-  <div id="empty-list-text"></div>
+    <footer>
+        <img class="pala-logo-min" src="../assets/pala-logo-min.png">
+        <a href="https://www.npalavecino.com.ar/">Nestor Fabian Palavecino Arnold</a>
+        <div id="year">2023</div>
+    </footer>
 
-  <footer>
-    Made by <a href="https://www.npalavecino.com.ar/">Nestor Fabian Palavecino Arnold.</a> 2022.
-  </footer>
-
-  <app-go-to-top-button></app-go-to-top-button>
+    <app-go-to-top-button></app-go-to-top-button>
 </body>

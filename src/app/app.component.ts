@@ -42,7 +42,7 @@ export class AppComponent {
 
 
   ngOnInit() {
-    document.body.setAttribute("style", "background-color: #323232;");
+    document.body.setAttribute("style", "background-color: #5c3230;");
     let tasks = this.myStorage.getItem("tasks");
     this.tasks = JSON.parse(tasks !== null ? tasks : "[]");
     this.checkEmptyList();

@@ -2,25 +2,29 @@
     font-family: 'Consolas', sans-serif;
 }
 
-@media (max-width: 600px) {
-    #Title {
-        width: 55vw;
-    }
-
-    #task-list {
-        padding-inline-start: 10px;
-        padding-inline-end: 10px;
-    }
+#Title, 
+#add-task h3,
+#year {
+    cursor: default;
 }
 
-@media (min-width: 600px) {
-    #Title {
-        width: 33vw;
-    }
-    #task-list {
-        padding-inline-start: 50px;
-        padding-inline-end: 50px;
-    }
+input[type="text"],
+#add-task-button {
+    background-color: antiquewhite;
+}
+
+input[type="text"] {
+    padding: 1vh;
+    border: 3px rgba(165, 42, 42, 1) solid;
+    width: 30vw;
+    text-align: center;
+    color: brown;
+}
+
+input[type="text"]:focus {
+    font-size: 1.25rem;
+    font-weight: bold;
+    
 }
 
 input[type="text"]::placeholder {      
@@ -47,7 +51,7 @@ h3 {
 }
 
 #add-task-button {
-    width: 100px;
+    width: max-content;
     height: 50px;
     border-color: brown;
     color: brown;
@@ -56,24 +60,36 @@ h3 {
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.2em;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #add-task-button:hover {
     background-color: rgb(206, 200, 200);
 }
 
+#add-task-button:active {
+    background-color: rgb(161, 157, 157);
+}
+
 #add-task input, #add-task button {
     margin: 10px;
 }
 
+#Title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #Title {
     color: antiquewhite;
-    background-color: brown;
-    display: block;
-    font-size: larger;
-    margin: auto;
-    border-radius: 15px;
-
+    text-shadow: 
+        0 0 10px rgba(165, 42, 42, 1), 
+        0 0 10px rgba(165, 42, 42, 1), 
+        0 0 10px rgba(165, 42, 42, 1), 
+        0 0 10px rgba(165, 42, 42, 1);
+    font-size: 2.75rem;
 }
 
 #Title h2 {
@@ -86,18 +102,47 @@ h3 {
     margin-bottom: 0px;
 }
 
+.task-container {
+    margin-bottom: 3vh !important;
+}
+
+/* Footer always at the bottom */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex-grow: 1;
+}
 footer {
-    margin: 25px;
-    height: 15px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 5vh auto;
+}
+/* --------------------------- */
+
+footer {
+    height: max-content;
     font-weight: normal;
     color: darkgray;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1vh;
 }
 
 footer a {
     text-decoration: none;
     color: antiquewhite;
-    font-weight: bold;
+}
+
+.pala-logo-min {
+    width: 50px;
 }
 
 #empty-list-text {
@@ -106,4 +151,18 @@ footer a {
     margin: 50px;
     font-weight: bold;
     color: darkgrey;
+}
+
+@media (max-width: 600px) {
+    #task-list {
+        padding-inline-start: 10px;
+        padding-inline-end: 10px;
+    }
+}
+
+@media (min-width: 600px) {
+    #task-list {
+        padding-inline-start: 50px;
+        padding-inline-end: 50px;
+    }
 }
