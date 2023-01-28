@@ -55,7 +55,7 @@ export class AppComponent {
   }
 
 
-  addTask(taskTitle: HTMLInputElement, taskTime: HTMLInputElement) {
+  addTask(taskTitle: HTMLTextAreaElement, taskTime: HTMLInputElement) {
     if (taskTitle.value === "" || taskTime.value === "") {
       alert("Please add some information before adding a task");
       return;

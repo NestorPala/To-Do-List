@@ -9,36 +9,45 @@
 }
 
 input[type="text"],
-#add-task-button {
+#add-task-button,
+textarea {
     background-color: antiquewhite;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
     padding: 1vh;
-    border: 3px rgba(165, 42, 42, 1) solid;
-    width: 30vw;
+    border: 2px rgba(165, 42, 42, 1) solid;
     text-align: center;
     color: brown;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+textarea:focus {
     font-size: 1.25rem;
     font-weight: bold;
     
 }
 
-input[type="text"]::placeholder {      
+input[type="text"]::placeholder,
+textarea::placeholder {      
     /* Firefox, Chrome, Opera */
     text-align: center;
     font-size: medium;
     color: rgba(165, 42, 42, 0.548);
     font-style: italic;
     font-weight: 600;
-    
 }
 
 input[type="text"]:focus::placeholder {
     color: antiquewhite;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+    overflow-wrap: break-word;
+    height: 15vh;
 }
 
 h3 {
@@ -158,11 +167,19 @@ footer a {
         padding-inline-start: 10px;
         padding-inline-end: 10px;
     }
+    input[type="text"],
+    textarea {
+        width: 70vw;
+    }
 }
 
 @media (min-width: 600px) {
     #task-list {
         padding-inline-start: 50px;
         padding-inline-end: 50px;
+    }
+    input[type="text"],
+    textarea {
+        width: 35vw;
     }
 }

@@ -6,8 +6,8 @@
         <br><br>
         <div id="add-task">
             <h3>Enter a new task to your list:</h3>
-            <input #taskTime type="text" placeholder="18:30"><br>
-            <input #taskTitle type="text" placeholder="'Go to the gym'"><br><br><br>
+            <input #taskTime type="text" placeholder="A time, for example: 18:30"><br>
+            <textarea #taskTitle type="text" placeholder="A description, for example: 'Go to the gym'"></textarea><br><br><br>
             <button id="add-task-button" (click)="addTask(taskTitle, taskTime)">
                 Add new task
             </button>
